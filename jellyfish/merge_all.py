@@ -2,26 +2,16 @@ import os
 import subprocess
 
 # Directories
-fasta_directory = "/home/Shawn_xgb/raw_fastas"
 jf_directory = "/home/Shawn_xgb/Jellyfish"
-output_merged_file = "/home/Shawn_xgb/Jellyfish/merged.jf"
+output_merged_file = "/home/Shawn_xgb/Jellyfish/ALL.jf"
 
 # Jellyfish command
 jellyfish_command = "jellyfish"
 
-def merge_jf_from_txts():
-    # List all .txt files in the directory
-    fasta_files = [f for f in os.listdir(fasta_directory) if f.endswith(".fasta")]
-
-    # Extract the base names (without extensions) of the .txt files
-    base_names = [os.path.splitext(txt)[0] for txt in fasta_files]
+def merge_jf():
 
     # Find matching .jf files
-    jf_files_to_merge = [
-        os.path.join(jf_directory, base_name + ".jf")
-        for base_name in base_names
-        if os.path.exists(os.path.join(jf_directory, base_name + ".jf"))
-    ]
+    jf_files_to_merge = os.listdir(jf_directory)
 
     # Ensure there are .jf files to merge
     if not jf_files_to_merge:
@@ -42,4 +32,4 @@ def merge_jf_from_txts():
         print(f"Error during merge: {e}")
 
 if __name__ == "__main__":
-    merge_jf_from_txts()
+    merge_jf()

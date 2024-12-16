@@ -57,7 +57,7 @@ def main(n):
     kmer_dict = pickle.load(open('../kmer_dict.pkl', 'rb'))
 
 
-    fasta_files = sorted(Path('/home/kite/sparse_dump').glob('*.fasta'))
+    fasta_files = sorted(Path('/home/Shawn_xgb/dump').glob('*.fasta'))
     start_idx = n * len(fasta_files) // 100
     end_idx = (n + 1) * len(fasta_files) // 100
     fasta_files = fasta_files[start_idx:end_idx]

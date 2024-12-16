@@ -3,7 +3,7 @@ import subprocess
 from tqdm import tqdm
 
 # Directories
-input_directory = "/home/transfer/genomes/genomes"
+input_directory = "/home/genomes/genomes"
 output_directory = "/home/Shawn_xgb/Jellyfish"
 
 # Jellyfish command parameters
